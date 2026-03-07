@@ -1,15 +1,14 @@
-from product import Product # pyright: ignore[reportMissingImports]
-from product_manager import ProductManager # pyright: ignore[reportMissingImports]
+from cart import Cart # pyright: ignore[reportMissingImports]
+import random
 
-manager = ProductManager()
+cart = Cart()
 
-p1 = Product("Laptop", 120000, 5)
-p2 = Product("Telefon", 80000, 10)
-p3 = Product("Miš", 2000, 50)
+random_products = random.sample(manager.products, 3) # pyright: ignore[reportUndefinedVariable]
 
-manager.add_product(p1)
-manager.add_product(p2)
-manager.add_product(p3)
+for product in random_products:
+    cart.add_to_cart(product)
 
-manager.show_products()
-print("Ukupna vrednost inventara:", manager.total_inventory_value(), "RSD")
+print("\nSadržaj korpe:")
+cart.show_cart()
+
+print("Ukupan iznos za naplatu:", cart.calculate_total(), "RSD")
