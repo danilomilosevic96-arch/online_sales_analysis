@@ -1,13 +1,12 @@
-from product import Product # pyright: ignore[reportMissingImports]
-from product_manager import ProductManager # pyright: ignore[reportMissingImports]
+from cart import Cart # pyright: ignore[reportMissingImports]
+import random
 
-manager = ProductManager()
+cart = Cart()
 
-p1 = Product("Gaming Laptop", 150000, 3)
-p2 = Product("Telefon", 80000, 10)
-p3 = Product("Miš", 2000, 50)
+p1 = Product("Gaming Laptop", 150000, 3) # pyright: ignore[reportUndefinedVariable]
+p2 = Product("Telefon", 80000, 10) # pyright: ignore[reportUndefinedVariable]
+p3 = Product("Miš", 2000, 50) # pyright: ignore[reportUndefinedVariable]
 
-manager.add_product(p1)
-manager.add_product(p2)
-manager.add_product(p3)
+for product in random_products: # pyright: ignore[reportUndefinedVariable]
+    cart.add_to_cart(product)
 
